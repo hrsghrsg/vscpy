@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科学计算器</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .back-btn {
+      padding: 0.8rem 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+    .back-btn:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>科学计算器</h1>
+      <a href="../index.html" class="back-btn">返回主页</a>
+    </div>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="display" value="0" disabled>
+      </div>
+      <div class="buttons basic">
+        <button class="operator" data-value="AC">AC</button>
+        <button class="operator" data-value="DEL">DEL</button>
+        <button class="operator" data-value="%">%</button>
+        <button class="operator" data-value="/">/</button>
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button class="operator" data-value="*">*</button>
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button class="operator" data-value="-">-</button>
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button class="operator" data-value="+">+</button>
+        <button data-value="0" class="zero">0</button>
+        <button data-value=".">.</button>
+        <button class="operator equal" data-value="=">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

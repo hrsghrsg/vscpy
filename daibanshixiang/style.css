@@ -1,0 +1,146 @@
+:root {
+  --primary-color: #6C5CE7;
+  --secondary-color: #FF7675;
+  --text-color: #2D3436;
+  --bg-color: #F8F9FA;
+  --border-color: #DFE6E9;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+#todo-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+#todo-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+#todo-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+#todo-form button:hover {
+  opacity: 0.9;
+}
+
+#todo-form button:active {
+  transform: scale(0.98);
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  transform-origin: top;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.removing {
+  transform: scaleY(0);
+  opacity: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  pointer-events: none;
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+}
+
+.todo-content {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.todo-time {
+  font-size: 0.875rem;
+  color: #636e72;
+  margin-top: 0.25rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 118, 117, 0.1);
+}
+
+.delete-btn svg {
+  width: 20px;
+  height: 20px;
+}
