@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推荐导航</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">
+                <i class="material-icons">arrow_back</i>
+                <span>返回主页</span>
+            </a>
+            <h1>推荐导航</h1>
+            <button class="add-btn" onclick="showAddForm()">
+                <i class="material-icons">add</i>
+                <span>添加推荐</span>
+            </button>
+        </div>
+
+        <div class="section">
+            <h2>实用网站</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">code</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>GitHub</h3>
+                            <small>代码托管平台</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        全球最大的代码托管平台，提供代码版本控制和协作功能。
+                    </p>
+                    <a href="https://github.com" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">school</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>MDN Web Docs</h3>
+                            <small>Web 技术文档</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Mozilla 提供的 Web 技术权威文档，包含详细的教程和参考资料。
+                    </p>
+                    <a href="https://developer.mozilla.org" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">library_books</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Anna's Archive</h3>
+                            <small>开放图书馆</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        非营利性的开放图书馆，提供学术资源、书籍、期刊等数字资源的搜索和下载。支持多语言检索。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">免费资源</span>
+                        <span class="tag">多语言</span>
+                        <span class="tag">学术资源</span>
+                    </div>
+                    <a href="https://zh.annas-archive.org/" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">security</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Whoer</h3>
+                            <small>网络安全检测</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        专业的网络安全检测工具，可检测代理、IP、DNS泄露等安全问题，帮助保护个人隐私和网络安全。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">安全检测</span>
+                        <span class="tag">隐私保护</span>
+                    </div>
+                    <a href="https://whoer.net/zh" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">mail</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Temp Mail</h3>
+                            <small>临时邮箱服务</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        提供临时、匿名的电子邮箱服务，保护隐私，避免垃圾邮件，适合临时注册和测试使用。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">临时邮箱</span>
+                        <span class="tag">隐私保护</span>
+                    </div>
+                    <a href="https://temp-mail.org/zh/" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">apps</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>阿虚同学</h3>
+                            <small>资源分享站</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        优质资源分享网站，提供各类软件、工具和使用教程，致力于分享互联网优质资源。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">资源分享</span>
+                        <span class="tag">工具推荐</span>
+                    </div>
+                    <a href="https://www.ahhhhfs.com/" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>AI 工具</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">chat</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>ChatGPT Plus</h3>
+                            <small>AI 助手导航</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        ChatGPT 相关资源导航网站，收录各类 AI 工具和使用教程，助你快速了解和使用 AI 技术。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">AI导航</span>
+                        <span class="tag">教程</span>
+                    </div>
+                    <a href="https://chatgptplus.cn/" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">auto_awesome</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>AI Life</h3>
+                            <small>AI 工具集合</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        收集整理优质 AI 工具和应用，提供丰富的 AI 相关资源，帮助用户发现和使用各类 AI 服务。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">AI工具</span>
+                        <span class="tag">资源导航</span>
+                    </div>
+                    <a href="https://al.chirmyram.com/" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>推荐软件</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">code</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Visual Studio Code</h3>
+                            <small>代码编辑器</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        微软开发的轻量级代码编辑器，支持多种编程语言和丰富的插件生态。
+                    </p>
+                    <a href="https://code.visualstudio.com" target="_blank" class="card-link">
+                        <span>下载软件</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">brush</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Figma</h3>
+                            <small>设计工具</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        专业的在线设计工具，支持协作和原型设计，适合UI/UX设计。
+                    </p>
+                    <a href="https://www.figma.com" target="_blank" class="card-link">
+                        <span>访问网站</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">terminal</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Cursor</h3>
+                            <small>AI 代码编辑器</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        基于 AI 的智能代码编辑器，支持代码自动补全、智能建议和自然语言编程，可显著提升编程效率。
+                    </p>
+                    <a href="https://www.cursor.com" target="_blank" class="card-link">
+                        <span>下载软件</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">book</i>
+                        </div>
+                        <div class="card-title">
+                            <h3>Koodo Reader</h3>
+                            <small>开源电子书阅读器</small>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        支持15种主流电子书格式，内置笔记、高亮、翻译功能。跨平台支持，提供 Windows、macOS、Linux 和网页版。
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">开源</span>
+                        <span class="tag">跨平台</span>
+                        <span class="tag">中文支持</span>
+                    </div>
+                    <a href="https://koodo.960960.xyz/zh" target="_blank" class="card-link">
+                        <span>访问官网</span>
+                        <i class="material-icons">open_in_new</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>添加推荐</h2>
+                <button class="close-btn" onclick="hideAddForm()">
+                    <i class="material-icons">close</i>
+                </button>
+            </div>
+            <form id="addForm" onsubmit="addRecommendation(event)">
+                <div class="form-group">
+                    <label for="section">分类</label>
+                    <select id="section" required>
+                        <option value="实用网站">实用网站</option>
+                        <option value="AI 工具">AI 工具</option>
+                        <option value="推荐软件">推荐软件</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle">副标题</label>
+                    <input type="text" id="subtitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">描述</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="icon">图标</label>
+                    <select id="icon" required>
+                        <option value="apps">应用</option>
+                        <option value="code">代码</option>
+                        <option value="book">书籍</option>
+                        <option value="school">教育</option>
+                        <option value="brush">设计</option>
+                        <option value="terminal">终端</option>
+                        <option value="chat">聊天</option>
+                        <option value="security">安全</option>
+                        <option value="mail">邮件</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="url">链接</label>
+                    <input type="url" id="url" required>
+                </div>
+                <div class="form-group">
+                    <label for="tags">标签（用逗号分隔）</label>
+                    <input type="text" id="tags" placeholder="例如: 免费,开源,中文">
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="hideAddForm()" class="cancel-btn">取消</button>
+                    <button type="submit" class="submit-btn">添加</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,18 @@
+/**
+ * 推荐卡片样式
+ * 
+ * 包含：
+ * 1. 卡片布局
+ * 2. 卡片内容样式
+ * 3. 标签样式
+ * 4. 悬停效果
+ */
+
+.recommendations-grid {...}
+.recommendation-card {...}
+.card-header {...}
+.card-icon {...}
+.card-title {...}
+.card-description {...}
+.card-tags {...}
+.card-link {...} 

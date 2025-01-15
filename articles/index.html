@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <a href="../index.html" class="back-btn">
+                <i class="material-icons">arrow_back</i>
+                <span>返回主页</span>
+            </a>
+            <button class="new-article-btn" onclick="showEditor()">
+                <i class="material-icons">add</i>
+                写新文章
+            </button>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">文章总数</span>
+                    <span class="stat-value" id="total-articles">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">本月发布</span>
+                    <span class="stat-value" id="monthly-articles">0</span>
+                </div>
+            </div>
+            <div class="categories">
+                <h3>分类筛选</h3>
+                <div class="category-list" id="category-list">
+                    <!-- 分类将通过 JavaScript 动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-left">
+                    <h1>文章管理</h1>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="material-icons">grid_view</i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="material-icons">view_list</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <i class="material-icons">search</i>
+                    <input type="text" id="search-input" placeholder="搜索文章...">
+                </div>
+            </div>
+
+            <div class="content-container">
+                <div id="articles-list" class="articles-list grid-view">
+                    <!-- 文章列表将通过 JavaScript 动态生成 -->
+                </div>
+
+                <div id="article-editor" class="article-editor hidden">
+                    <div class="editor-header">
+                        <div class="editor-main">
+                            <input type="text" id="article-title" placeholder="文章标题" class="title-input">
+                            <div class="editor-meta">
+                                <select id="article-category" class="category-select">
+                                    <option value="">选择分类</option>
+                                    <option value="技术">技术</option>
+                                    <option value="生活">生活</option>
+                                    <option value="随笔">随笔</option>
+                                </select>
+                                <input type="text" id="article-tags" placeholder="添加标签（用逗号分隔）" class="tags-input">
+                            </div>
+                        </div>
+                        <div class="editor-actions">
+                            <button class="preview-btn" onclick="togglePreview()">
+                                <i class="material-icons">preview</i>
+                                预览
+                            </button>
+                            <button class="cancel-btn" onclick="hideEditor()">
+                                <i class="material-icons">close</i>
+                                取消
+                            </button>
+                            <button class="save-btn" onclick="saveArticle()">
+                                <i class="material-icons">save</i>
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                    <div class="editor-container">
+                        <textarea id="article-content" placeholder="在这里写下你的文章内容..."></textarea>
+                        <div id="preview-content" class="preview-content hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

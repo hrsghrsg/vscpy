@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .article-detail {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            line-height: 1.8;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-to-list {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .article-detail {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-detail">
+        <div class="article-header">
+            <h1 class="article-title" id="article-title"></h1>
+            <div class="article-meta">
+                <span id="article-date"></span>
+                <span id="article-category"></span>
+            </div>
+            <div class="article-tags" id="article-tags"></div>
+        </div>
+        <div class="article-content" id="article-content"></div>
+        <div class="article-footer">
+            <a href="index.html" class="back-to-list">
+                <i class="material-icons">arrow_back</i>
+                返回文章列表
+            </a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+            
+            if (!articleId) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const articles = JSON.parse(localStorage.getItem('articles')) || [];
+            const article = articles.find(a => a.id === Number(articleId));
+
+            if (!article) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // 设置页面标题
+            document.title = article.title;
+
+            // 填充文章内容
+            document.getElementById('article-title').textContent = article.title;
+            document.getElementById('article-date').textContent = new Date(article.timestamp).toLocaleString();
+            document.getElementById('article-category').textContent = article.category || '未分类';
+            
+            // 处理标签
+            if (article.tags) {
+                const tagsContainer = document.getElementById('article-tags');
+                article.tags.split(',').forEach(tag => {
+                    if (tag.trim()) {
+                        const tagSpan = document.createElement('span');
+                        tagSpan.className = 'tag';
+                        tagSpan.textContent = tag.trim();
+                        tagsContainer.appendChild(tagSpan);
+                    }
+                });
+            }
+
+            // 使用 marked 渲染 Markdown 内容
+            document.getElementById('article-content').innerHTML = marked.parse(article.content);
+        });
+    </script>
+</body>
+</html> 

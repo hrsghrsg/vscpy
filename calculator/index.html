@@ -4,60 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>科学计算器</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-    .back-btn {
-      padding: 0.8rem 1.5rem;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-    }
-    .back-btn:hover {
-      background-color: #45a049;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-  </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
+      <a href="../index.html" class="back-btn">
+        <i class="material-icons">arrow_back</i>
+        <span>返回主页</span>
+      </a>
       <h1>科学计算器</h1>
-      <a href="../index.html" class="back-btn">返回主页</a>
+      <a href="help.html" class="help-btn">
+        <i class="material-icons">help_outline</i>
+      </a>
     </div>
     <div class="calculator">
       <div class="display">
+        <div class="expression" id="expression">0</div>
         <input type="text" id="display" value="0" disabled>
       </div>
-      <div class="buttons basic">
-        <button class="operator" data-value="AC">AC</button>
-        <button class="operator" data-value="DEL">DEL</button>
-        <button class="operator" data-value="%">%</button>
-        <button class="operator" data-value="/">/</button>
-        <button data-value="7">7</button>
-        <button data-value="8">8</button>
-        <button data-value="9">9</button>
-        <button class="operator" data-value="*">*</button>
-        <button data-value="4">4</button>
-        <button data-value="5">5</button>
-        <button data-value="6">6</button>
-        <button class="operator" data-value="-">-</button>
-        <button data-value="1">1</button>
-        <button data-value="2">2</button>
-        <button data-value="3">3</button>
-        <button class="operator" data-value="+">+</button>
-        <button data-value="0" class="zero">0</button>
-        <button data-value=".">.</button>
-        <button class="operator equal" data-value="=">=</button>
+      <div class="mode-switch">
+        <button class="mode-btn active" data-mode="rad">RAD</button>
+        <button class="mode-btn" data-mode="deg">DEG</button>
+      </div>
+      <div class="buttons">
+        <div class="scientific-buttons">
+          <button class="function" data-value="sin">sin</button>
+          <button class="function" data-value="cos">cos</button>
+          <button class="function" data-value="tan">tan</button>
+          <button class="function" data-value="pi">π</button>
+          <button class="function" data-value="log">log</button>
+          <button class="function" data-value="ln">ln</button>
+          <button class="function" data-value="e">e</button>
+          <button class="function" data-value="pow">x^y</button>
+          <button class="function" data-value="sqrt">√</button>
+          <button class="function" data-value="square">x²</button>
+          <button class="function" data-value="factorial">x!</button>
+          <button class="function" data-value="inverse">1/x</button>
+        </div>
+        <div class="basic-buttons">
+          <button class="operator clear" data-value="AC">AC</button>
+          <button class="operator" data-value="DEL">⌫</button>
+          <button class="operator" data-value="%">%</button>
+          <button class="operator" data-value="/">÷</button>
+          <button data-value="7">7</button>
+          <button data-value="8">8</button>
+          <button data-value="9">9</button>
+          <button class="operator" data-value="*">×</button>
+          <button data-value="4">4</button>
+          <button data-value="5">5</button>
+          <button data-value="6">6</button>
+          <button class="operator" data-value="-">−</button>
+          <button data-value="1">1</button>
+          <button data-value="2">2</button>
+          <button data-value="3">3</button>
+          <button class="operator" data-value="+">+</button>
+          <button data-value="0" class="zero">0</button>
+          <button data-value=".">.</button>
+          <button class="operator equal" data-value="=">=</button>
+        </div>
       </div>
     </div>
   </div>

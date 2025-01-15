@@ -1,0 +1,15 @@
+/**
+ * 模态框样式
+ * 
+ * 包含：
+ * 1. 模态框布局
+ * 2. 表单样式
+ * 3. 按钮样式
+ * 4. 动画效果
+ */
+
+.modal {...}
+.modal-content {...}
+.modal-header {...}
+.form-group {...}
+.form-actions {...} 

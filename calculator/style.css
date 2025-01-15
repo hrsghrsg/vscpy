@@ -1,191 +1,206 @@
+:root {
+  --primary-color: #6366f1;
+  --primary-light: #818cf8;
+  --text-color: #1e293b;
+  --bg-color: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
-}
-
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.calculator {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.calculator {
-  width: 400px;
-  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .header {
-  position: relative;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.help-link, .back-link {
-  position: absolute;
-  top: 0;
-  color: #666;
+.back-btn, .help-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
+  color: var(--text-color);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.help-link {
-  right: 0;
+.back-btn:hover, .help-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
 }
 
-.back-link {
-  left: 0;
+h1 {
+  color: var(--text-color);
+  font-size: 1.75rem;
 }
 
-.help-link:hover, .back-link:hover {
-  color: #007bff;
-  text-decoration: underline;
+.calculator {
+  animation: fadeIn 0.5s ease-out;
 }
 
 .display {
-  margin-top: 30px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
 }
 
-.display input {
+.expression {
+  font-size: 1rem;
+  color: var(--text-light);
+  min-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#display {
   width: 100%;
-  height: 80px;
-  padding: 0 15px;
+  font-size: 2rem;
   text-align: right;
-  border: 2px solid #e0e0e0;
-  background-color: #f8f9fa;
-  color: #333;
-  font-size: 2.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border: none;
+  background: none;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
-.display input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+.mode-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
 }
 
 .buttons {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.scientific-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.basic-buttons {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+  gap: 0.75rem;
 }
 
-.buttons button {
-  padding: 20px;
-  font-size: 1.2rem;
+button {
+  padding: 1rem;
   border: none;
-  background-color: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+  background: white;
+  color: var(--text-color);
+  box-shadow: var(--shadow);
 }
 
-.buttons button:hover {
-  background-color: #e9ecef;
+button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.buttons .operator {
-  background-color: #007bff;
+.operator {
+  background: var(--primary-color);
   color: white;
 }
 
-.buttons .operator:hover {
-  background-color: #0069d9;
+.function {
+  background: var(--bg-color);
+  font-size: 1rem;
 }
 
-.buttons .equal {
-  background-color: #28a745;
-  color: white;
-  grid-column: span 2;
+.equal {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
 }
 
-.buttons .equal:hover {
-  background-color: #218838;
+.clear {
+  background: #ef4444;
 }
 
-.buttons .clear {
-  background-color: #ff3b30;
-  color: white;
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  #display {
+    font-size: 1.75rem;
+  }
+
+  .scientific-buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.buttons .clear:hover {
-  background-color: #e63329;
-}
+@media (max-width: 480px) {
+  .scientific-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.buttons .scientific {
-  background-color: #6c757d;
-  color: white;
-}
+  button {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
 
-.buttons .scientific:hover {
-  background-color: #5a6268;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.nav-btn {
-  flex: 1;
-  padding: 15px;
-  text-align: center;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.nav-btn:hover {
-  background-color: #0069d9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.nav-btn.active {
-  background-color: #0056b3;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  .back-btn span {
+    display: none;
+  }
 }
